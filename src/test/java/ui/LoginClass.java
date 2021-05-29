@@ -31,6 +31,6 @@ public class LoginClass {
 	public void closeBrowser() {
 		System.out.println("Driver is going to kill itself");
 		driver.quit();
-		System.out.println("Driver  dead body found");
+		System.out.println("Driver  dead body found !! Oh call the police");
 	}
 }
