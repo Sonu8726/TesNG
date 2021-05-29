@@ -17,14 +17,20 @@ public class LoginClass {
 		System.out.println("Driver Set and ready to Launch");
 	}
 
-	@Test
-	public void loginClass() {
+	@Test(priority = 1)
+	public void loginClass() throws InterruptedException {
 		System.out.println("Driver launched");
 		System.out.println("Login test");
 		driver.get("https://google.com/");
+		Thread.sleep(5000);
 		String title = driver.getTitle();
 		System.out.println(title);
 		System.out.println("Driver performs operation");
+	}
+
+	@Test(priority = 0)
+	public void sampleProgram() {
+		System.out.println("Test 2");
 	}
 
 	@AfterTest
