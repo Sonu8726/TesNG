@@ -26,23 +26,27 @@ public class VerifyTitleTest {
 		System.out.println("Driver Set and ready to Launch");
 	}
 
-	@Test
-	public void verifyTitle() {
-		String expectedTitle = "Medicio landings page template for Health niche";
+	@Test(groups = "Seriously")
+	public void verifyTitleHardAssert() {
+		String expectedTitle = "Medicio landing page template for Health niche";
 		driver.get("http://localhost/lims/");
 		String actualTitle = driver.getTitle();
+		// HardAssert
+		System.out.println("Hard Assert");
+		Assert.assertEquals(actualTitle, expectedTitle, "Verified Successfull");
+		System.out.println("Hard Assert completed");
+	}
 
+	@Test(groups = { "Seriously", "manage" })
+	public void verifyTitleSoftAssert() {
+		String expectedTitle = "Medicio landing page template for Health niche";
+		driver.get("http://localhost/lims/");
+		String actualTitle = driver.getTitle();
 		// SoftAssert
 		SoftAssert sftasrt = new SoftAssert();
 		System.out.println("softAssert Started");
 		sftasrt.assertEquals(actualTitle, expectedTitle, "Not verified but Oky");
 		System.out.println("Soft assert completed");
-
-		// HardAssert
-		System.out.println("Hard Assert");
-		Assert.assertEquals(actualTitle, expectedTitle, "Verified Successfull");
-		System.out.println("Hard Assert completed");
-
 	}
 
 	@AfterTest

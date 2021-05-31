@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="ui.VerifyTitleTest">
+      <class name="ui.SkipTestInTestNG">
         <methods>
-          <include name="closeBrowser"/>
-          <include name="verifyTitle"/>
-          <include name="launchBrowser"/>
+          <include name="operation3"/>
+          <include name="closeEverything"/>
+          <include name="operation1"/>
+          <include name="operation2"/>
         </methods>
-      </class> <!-- ui.VerifyTitleTest -->
+      </class> <!-- ui.SkipTestInTestNG -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
